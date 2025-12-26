@@ -1,51 +1,51 @@
-const todoService = require('../services/todo/todoService');
+const userService = require('../services/user/userService');
 const responseHandle = require('../helpers/responseHandle');
 
-const createTodo = async (req, res) => {
+const createUser = async (req, res) => {
   try {
-    const data = await todoService.createTodo(req.body);
+    const data = await userService.createUser(req.body);
     return responseHandle.handleData(res, data);
   } catch (error) {
     return responseHandle.handleError(res, error);
   }
 };
 
-const updateTodo = async (req, res) => {
+const updateUser = async (req, res) => {
   try {
-    await todoService.updateTodo(req.params.id, req.body);
+    await userService.updateUser(req.params.id, req.body);
     return responseHandle.handleOK(res);
   } catch (error) {
     return responseHandle.handleError(res, error);
   }
 };
 
-const getTodoById = async (req, res) => {
+const getUserById = async (req, res) => {
   try {
-    const data = await todoService.getTodoById(req.params.id);
+    const data = await userService.getUserById(req.params.id);
     return responseHandle.handleData(res, data);
   } catch (error) {
     return responseHandle.handleError(res, error);
   }
 };
 
-const getAllTodos = async (req, res) => {
+const getUsers = async (req, res) => {
   try {
-    const data = await todoService.getAllTodos(req.query);
+    const data = await userService.getUsers(req.query);
     return responseHandle.handleData(res, data);
   } catch (error) {
     return responseHandle.handleError(res, error);
   }
 };
 
-const deleteTodoById = async (req, res) => {
+const deleteUser = async (req, res) => {
   try {
   } catch (error) {}
 };
 
 module.exports = {
-  createTodo,
-  updateTodo,
-  getTodoById,
-  getAllTodos,
-  deleteTodoById,
+  createUser,
+  updateUser,
+  getUserById,
+  getUsers,
+  deleteUser,
 };

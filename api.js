@@ -6,10 +6,12 @@ const responseCode = require('./src/helpers/responseCode.js');
 const { connectDb } = require('./models/index.js');
 // Routes
 const todoRoutes = require('./routes/todoRoutes.js');
+const userRoutes = require('./routes/userRoutes.js')
 
 connectDb(process.env.MONGO_URI);
 
 router.use('/todos', todoRoutes);
+router.use('/users', userRoutes)
 
 router.get('/', function (req, res) {
   return responseHandle.responseWithoutData(

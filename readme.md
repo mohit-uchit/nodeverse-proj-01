@@ -52,4 +52,32 @@ total records = 36
 3.4 = 4
 
 
-Math.ceil
+Relations
+
+users 
+
+users => orders 
+user => address
+
+1. one to many
+2. one to one 
+
+user : {
+  _id : userId
+   name : mohit,
+   age : 12
+   email : asdfdsf@gmail.com
+   adress : {
+   userId: ObjectId(user)
+   city : new delhi
+   state : Delhi
+   postalCode : 110001
+}
+}
+
+adress : {
+   userId: ObjectId(user)
+   city : new delhi
+   state : Delhi
+   postalCode : 110001
+}
